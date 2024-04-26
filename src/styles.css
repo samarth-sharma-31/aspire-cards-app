@@ -1,0 +1,541 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.App {
+  font-family: sans-serif;
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+}
+
+@media only screen and (max-width: 750px) {
+  .root-container {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    height: 100vh;
+  }
+
+  .navigation-container {
+    background-color: #0C365A;
+
+    font-size: 14px;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
+    z-index: 99;
+    color: white;
+    width: 100%;
+    padding: 2% 1%;
+  }
+
+  .nav-items-container {
+    width: 100%;
+  }
+
+  .nav-items-list {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .nav-item-card {
+    display: flex;
+    flex-direction: column;
+    margin: 0 !important;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-item {
+    margin: 0 !important;
+  }
+
+  .company-logo-container {
+    display: none;
+  }
+
+  .company-text {
+    display: none;
+  }
+
+  .add-new-card-modal-content {
+    max-width: 300px;
+  }
+
+  .action-label {
+    font-size: 12px;
+    font-family: "Open Sans", regular !important;
+  }
+}
+
+@media only screen and (min-width: 751px) {
+
+  .root-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .navigation-container {
+    width: 20%;
+    padding: 8vh 2.5%;
+    background-color: #0C365A;
+  }
+
+  .company-text {
+    margin-bottom: 80px;
+    font-size: 15px;
+  }
+
+  .add-new-card-modal-content {
+    max-width: 450px;
+  }
+
+  .action-label {
+    font-size: 13px;
+    font-family: "Open Sans", regular !important;
+  }
+  
+}
+
+.error-page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.nav-items-list {
+  font-size: 16px;
+}
+
+.mobile-nav-items-list {
+  font-size: 14px;
+  display: flex;
+  position: fixed;
+  bottom: 0px;
+  z-index: 99;
+  background: #0C365A;
+  color: white;
+  width: 100%;
+}
+
+.active-nav-link {
+  color: #01d167;
+}
+
+.cards-page-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4vh;
+}
+
+@media only screen and (max-width: 750px) {
+  .cards-page-container {
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 1rem 1rem 0 1rem !important;
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 751px) {
+  .cards-page-container {
+    display: flex;
+    flex-direction: column;
+    padding: 4.5%;
+    overflow-y: scroll;
+    width: 80%;
+  }
+}
+
+/* .cards-page-container {
+  display: flex;
+  flex-direction: column;
+  padding: 4.5%;
+  overflow-y: scroll;
+  width: 80%;
+} */
+
+/* .mobile-cards-page-container {
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  padding: 1rem 1rem 0 1rem !important;
+  width: 100%;
+} */
+
+.currency-badge {
+  background-color: #01D167;
+  padding: 0rem 0.5rem;
+  font-size: 13px;
+  border-radius: 0.25rem;
+  color: #FFFFFF;
+  font-weight: bold;
+  margin-top: 0.25rem;
+}
+
+.available-balance-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.available-amount {
+  font-size: 1.75rem;
+}
+
+.new-card-btn {
+  height: 40px;
+  background: #325BAF !important;
+  text-transform: none !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.save-card-btn {
+  margin-bottom: 1rem !important;
+  width: 100%;
+}
+
+.cancel-card-btn {
+  width: 100%;
+}
+
+.cards-page-body {
+  height: 100%;
+}
+
+.cards-tab-label {
+  text-transform: none !important;
+}
+
+.selected-card-tab {
+  font-weight: bold;
+  color: #222222 !important;
+  font-family: "Open Sans", sans-serif !important;
+}
+
+.disabled-card-tab {
+  color: #222222 !important;
+  opacity: 30%;
+}
+
+.MuiTabs-indicator {
+  background-color: #23CEFD !important;
+}
+
+.show-card-number-icon {
+  color: #01D167;
+  height: 1rem !important;
+  width: 1rem !important;
+  margin-right: 0.25rem;
+}
+
+.show-card-number-label {
+  color: #01D167;
+  font-size: 0.75rem;
+  align-self: center;
+  font-family: "Open Sans", bold !important;
+  font-weight: 700 !important;
+}
+
+.credit-card {
+  height: 248px;
+  border-radius: 0.5rem !important;
+  color: #FFFFFF !important;
+}
+
+.credit-card-inactive {
+  background-color: grey !important;
+}
+
+.credit-card-active {
+  background-color: #01D167 !important;
+}
+
+.card-container-wrapper {
+  padding: 2rem 4.5%;
+  border-radius: 8px !important;
+}
+
+.mobile-card-container-wrapper {
+  padding: 1rem 1.25rem;
+  border-radius: 8px !important;
+}
+
+.cards-actions-widget {
+  border-radius: 1rem;
+  background-color: #EDF3FF;
+  padding: 5% 10%;
+}
+
+.mobile-cards-actions-widget {
+  border-radius: 1rem;
+  background-color: #EDF3FF;
+  padding: 1.25rem 1.5rem;
+}
+
+@media only screen and (max-width: 750px) {
+  .cards-details-and-transactions-container {
+    width: 100% !important;
+    max-width: 410px !important;
+    margin-bottom: 5vh;
+  }
+  
+  .cards-carousal-and-actions-container-desktop {
+    width: 100% !important;
+    max-width: 410px !important;
+  }
+}
+
+@media only screen and (max-width: 1250px) and (min-width: 751px) {
+  .cards-details-and-transactions-container {
+    width: 80% !important;
+    max-width: 480px !important;
+    margin: 0 4% !important;
+  }
+  
+  .cards-carousal-and-actions-container-desktop {
+    width: 80% !important;
+    margin: 0 4% !important;
+    max-width: 480px !important;
+  }
+}
+
+@media only screen and (min-width: 1251px) {
+
+  .cards-details-and-transactions-container {
+    width: 50%;
+    margin-left: 5%;
+    max-width: 460px;
+  }
+  
+  .cards-carousal-and-actions-container-desktop {
+    width: 50%;
+    margin-right: 5%;
+    max-width: 460px;
+  }
+  
+}
+
+
+.company-logo-credit-card-white {
+  height: 2rem;
+  width: 6rem;
+}
+
+.card-holder-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "Open Sans", bold !important;
+  text-align: left;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.credit-card-validity, .credit-card-cvv-label, .credit-card-number-info {
+  font-size: 14px;
+  font-family: "Open Sans", bold !important;
+  font-weight: bold;
+}
+
+.credit-card-cvv-hidden {
+  line-height: 24px;
+  font-size: 24px;
+  position: relative;
+  top: 0.25rem;
+}
+
+.credit-card-number-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.unfreeze-icon {
+  height: 18px;
+  width: 18px;
+}
+
+.unfreeze-icon-container {
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background-color: #325BAF;
+}
+
+.card-details-accordian-main {
+  background-color: #F5F9FF !important;
+  pointer-events: none;
+}
+
+.recent-transactions-accordian-main {
+  background-color: #F5F9FF !important;
+}
+
+.card-details-accordian-summary {
+  color: #0C365A !important;
+  font-size: 14px;
+  font-family: "Open Sans", bold !important;
+  height: 72px;
+}
+
+.recent-transactions-accordian-summary {
+  color: #0C365A !important;
+  font-size: 14px;
+  font-family: "Open Sans", bold !important;
+  height: 72px;
+}
+
+.cards-carousal-container-wrapper {
+  min-height: 285px;
+}
+
+.view-all-transactions {
+  color: #01D167;
+  background-color: #EDFFF5;
+  padding: 1rem 2rem;
+  font-size: 13px;
+  font-family: "Open Sans", bold !important;
+}
+
+.recent-transactions-accordian-details {
+  padding: 0 !important;
+  background-color: #FFFFFF;
+}
+
+.transaction-card {
+  border-bottom: 1px solid #F5F5F5;
+}
+
+.transaction-badge {
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 7%;
+}
+
+.transaction-badge-icon {
+  height: 16px;
+  width: 16px;
+}
+
+.credit-debit-icon-container {
+  width: 24px;
+  height: 20px;
+  background-color: #325BAF;
+  border-radius: 50%;
+}
+
+.transaction-name {
+  font-size: 14px;
+  color: #222222;
+  font-family: "Open Sans", bold !important;
+  text-align: left;
+  margin-bottom: 0.125rem;
+}
+
+.transaction-date {
+  font-size: 13px;
+  color: #AAAAAA;
+  font-family: "Open Sans", bold !important;
+  text-align: left;
+  margin-bottom: 10%;
+}
+
+.add-card-modal-form-info {
+  font-size: 13px !important;
+  color: #AAAAAA !important;
+  font-family: "Open Sans", bold !important;
+  margin-bottom: 1rem !important;
+}
+
+.credit-debit-label-row {
+  font-size: 12px;
+  color: #325BAF;
+  font-family: "Open Sans", bold !important;
+  margin-bottom: 1rem;
+}
+
+.transaction-amount-container {
+  font-size: 14px !important;
+  font-family: "Open Sans", bold !important;
+}
+
+.transaction-amount-green {
+  color: #01D167;
+}
+
+.transaction-name-column {
+  
+}
+
+.mobile-transaction-name-column {
+  position: relative;
+  right: 2%;
+}
+
+.add-card-modal-card-container {
+}
+
+.add-card-modal-form-container {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+}
+
+.info-icon-modal {
+  position: relative;
+  bottom: 2px;
+}
+
+.add-new-card-modal-heading{
+  font-size: 24px !important;
+  font-family: "Open Sans", bold !important;
+  text-align: center;
+}
+
+.add-card-modal-action-buttons-container {
+  margin-bottom: 1rem;
+}
+
+.card-holder-name-empty {
+  height: 36px !important;
+}
+
+.freeze-icon-parent-container, .unfreeze-icon-parent-container {
+  min-width: 70px;
+}
+
+.action-container-right-margin {
+  margin-right: 3%;
+}
+
+.transactions-list-inner-container {
+  padding: 6% 6% 0 6%;
+}
+
+@media only screen and (max-width: 1251px) {
+  .my-debit-cards-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.credit-card-number-row {
+  height: 24px;
+}
+
+.credit-card-number-visible {
+  width: 44px;
+}
